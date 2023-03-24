@@ -1,0 +1,29 @@
+/* register page */
+
+.register_form{
+    width: 700px;
+    margin: 0 auto;
+}
+
+
+/* login page */
+
+.login-form 
+{
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.login-form a{
+    font-size: 13px;
+    margin-top: 10px;
+
+}
+
+
+.login-form a:hover
+{
+    color: rgb(180 ,45 ,65 );
+}

@@ -1,0 +1,100 @@
+/*dashboard*/
+.dashboard_main_wrapper
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.dashboard_wrapper
+{
+    width: 580px;
+    padding: 5px;
+    height: 500px;
+    overflow: auto;
+}
+
+
+
+.profile_interior p
+{
+    margin-bottom: 10px;
+}
+
+.profile_pic
+{
+    height: 100px;
+    width: 100px;
+    border: 2px solid rgba(12,10,120,0.4);
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.profile_initials
+{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30 px;
+    font-weight: 700;
+    color: rgb(22,22,222);
+}
+
+.profile_pic_interior img
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.profile_date
+{
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.edit_user_form
+{
+width: 700px;
+margin: 0 auto;
+margin-bottom: 10px;
+
+}
+
+.edit_user_form input
+{
+    margin-bottom: 10px;
+}
+
+/* customers page */
+
+
+.customers_wrapper
+{
+    height: 600px;
+    overflow: auto;
+}
+
+.customers_interior
+{
+    width: 800px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.dashboard_wrapper{
+    padding:5px;
+
+}
+
+.add_form
+{
+    width: 600px;
+    margin: 0 auto;
+
+}
+
+.add_form input{
+    margin-bottom: 10px;
+}

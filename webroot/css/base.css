@@ -1,0 +1,36 @@
+.main_header
+{
+    width: 95%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.main_header ul li
+{
+    list-style: none;
+}
+
+.main_header ul li a
+{
+ font-size: 14px;
+}
+
+.main_header ul li a:hover
+{
+    color: rgb(28, 10, 105);
+}
+
+ #users_list,
+ #customers_list
+{
+    visibility: hidden;
+}
+
+.main_wrapper
+{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 5px;
+}
