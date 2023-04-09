@@ -4,11 +4,11 @@
         <?= $this->Form->create($customer) ?>
         <?= $this->Form->control("firstname", ["placeholder" => "Nume", "label" => false]) ?>
         <?= $this->Form->control("lastname", ["placeholder" => "prenume", "label" => false]) ?>
-        <?= $this->Form->control("details.address", ["placeholder" => "Adresă", "label" => false]) ?>
-        <?= $this->Form->control("details.state", ["placeholder" => "Ţară", "label" => false]) ?>
-        <?= $this->Form->control("details.zipcode", ["placeholder" => "Cod Poştal", "label" => false]) ?>
-        <?= $this->Form->control("details.dataNaşterii", ["type" => "date", "onchange" => "getAge();", "id" => "custBirth"]) ?>
-        <?= $this->Form->control("details.age", ["placeholder" => "vârstă", "readonly", "label" => false, "id" => "custAge"]) ?>
+        <?= $this->Form->control("address", ["placeholder" => "Adresă", "label" => false]) ?>
+        <?= $this->Form->control("state", ["placeholder" => "Ţară", "label" => false]) ?>
+        <?= $this->Form->control("zipcode", ["placeholder" => "Cod Poştal", "label" => false]) ?>
+        <?= $this->Form->control("birthdate", ["type" => "date", "onchange" => "getAge();", "id" => "Birth"]) ?>
+        <?= $this->Form->control("age", ["placeholder" => "vârstă", "readonly", "label" => false, "id" => "Age"]) ?>
         <?= $this->Form->button(("Trimite")) ?>
         <?= $this->Form->end(); ?>
     </div>

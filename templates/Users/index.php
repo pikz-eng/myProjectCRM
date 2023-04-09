@@ -9,3 +9,5 @@
         <?= $this -> Html -> link(" Nu eşti utilizator? Inregistrează-te aici" , "/register") ?>
     </div>
 </div>
+
+

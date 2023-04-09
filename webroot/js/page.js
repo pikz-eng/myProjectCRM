@@ -9,9 +9,9 @@ function editInitials()
 
 
 function getAge() {
-var custBirth = new Date(document.getElementById("custBirth").value);
+var birth = new Date(document.getElementById("Birth").value);
 var today = Date.now();
-var age = new Date(today - custBirth.getTime());
+var age = new Date(today - birth.getTime());
 
-document.getElementById("custAge").value = Math.abs(age.getUTCFullYear() - 1970);
+document.getElementById("Age").value = Math.abs(age.getUTCFullYear() - 1970);
 }

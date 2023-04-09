@@ -59,10 +59,11 @@ return static function (RouteBuilder $routes) {
         $builder->connect("/users/view/*", ["controller" => "Users", "action" => "view"]);
         $builder->connect("/users/edit/*", ["controller" => "Users", "action" => "edit"]);
         $builder->connect("/logout", ["controller" => "Users", "action" => "logout"]);
-        $builder->connect("/customers", ["controller" => "Customers", "action" => "index"]);
-        $builder->connect("/customers/view/*", ["controller" => "Customers", "action" => "view"]);
+        $builder->connect("/customers/", ["controller" => "Customers", "action" => "index"]);
         $builder->connect("/customers/add", ["controller" => "Customers", "action" => "add"]);
         $builder->connect("/customers/edit/*", ["controller" => "Customers", "action" => "edit"]);
+        $builder->connect("/customers/delete/*", ["controller" => "Customers", "action" => "delete"]);
+
 
 
 

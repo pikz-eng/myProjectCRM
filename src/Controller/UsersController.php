@@ -14,7 +14,7 @@ class UsersController extends AppController
         {
             if($this -> Users -> findByUsername($this -> request ->getData("username"))-> first())
             {
-                $this -> Flash -> error(__("Acest username este luat"));
+                $this -> Flash -> error(__("Acest utilizator este luat"));
 
             }
             else if($this -> Users -> findAllByUsernameOrEmail($this -> request -> getData("username"),$this -> request -> getData("email")) -> first())
@@ -95,7 +95,7 @@ class UsersController extends AppController
 
         $this -> loadComponent("Paginator");
         $customer_table = $this -> getTableLocator() -> get("Customers");
-        $customers = $this -> Paginator -> paginate($customer_table -> find()-> contain("Details"));
+        $customers = $this -> Paginator -> paginate($customer_table -> find());
 
         $user = $this -> Users -> findById($id) -> contain(["Profiles"]) -> first();
         if($user -> id != $this -> request -> getSession() -> read("id"))
@@ -154,7 +154,7 @@ class UsersController extends AppController
             $this -> Users -> patchEntity($user, $this -> request -> getData());
             if($this -> Users -> save($user))
             {
-              $this -> Flash -> success(("Profilul tau a fost updatat"));
+              $this -> Flash -> success(("Profilul tau a fost actualizat"));
               return $this -> redirect(["action" => "/view/$id"]);  
             }
             $this -> Flash -> error(("Mai incearca"));
