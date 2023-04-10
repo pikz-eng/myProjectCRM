@@ -13,8 +13,11 @@ class CustomersTable extends Table
 
         $this -> addBehavior("Timestamp");
         $this -> belongsTo("Users");
-        $this -> hasMany("Notes");
+        
     }
+
+
+    
     public function validationDefault(Validator $validator): Validator
     {
        

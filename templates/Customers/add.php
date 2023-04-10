@@ -1,4 +1,11 @@
+<div class="side-nav">
+            <h4 class="heading"><?= __('Actions') ?></h4>
+            <?= $this->Html->link(__('List Customers'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+
+
 <div class="background wrapper add_wrapper">
+
+
     <h3 class="main-heading"> Adaugă clienţi</h3>
     <div class="add_form">
         <?= $this->Form->create($customer) ?>
