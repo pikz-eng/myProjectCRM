@@ -3,12 +3,17 @@
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Cake\ORM\TableRegistry;
+use App\Model\Table\CustomersTable;
 
 class CustomersController extends AppController
 {
+
+
     public function index()
     {
-
+        parent::initialize();
+        $this->loadComponent('RequestHandler');
         $customers = $this->Customers->find()->toArray();
         $user = $this->getTableLocator()->get("Users");
         $current_user = $user->findById($this->request->getSession()->read("id"))->contain("Profiles")->first();
@@ -39,13 +44,64 @@ class CustomersController extends AppController
         return $this->redirect(["action" => "/index/"]);
     }
 
+    public function getCustomersData()
+    {
+        $this->autoRender = false;
+        $this->response = $this->response->withType('application/json');
+
+        $query = $this->Customers->find();
+
+        $searchValue = '';
+        if (array_key_exists('search', $this->request->getQuery())) {
+            $searchValue = $this->request->getQuery('search')['value'];
+            $query->where([
+                'OR' => [
+                    'firstname LIKE' => '%' . $searchValue . '%',
+                    'lastname LIKE' => '%' . $searchValue . '%',
+                ]
+            ]);
+        }
+
+        $start = $this->request->getQuery('start', 0);
+        $length = $this->request->getQuery('length', 10);
+        $query->limit($length)->offset($start);
+
+        $orderBy = '';
+        $orderDir = '';
+        if (array_key_exists('order', $this->request->getQuery())) {
+            $orderBy = $this->request->getQuery('order')[0]['column'];
+            $orderDir = $this->request->getQuery('order')[0]['dir'];
+            if (!empty($orderBy) && !empty($orderDir)) {
+                $columns = $this->Customers->schema()->columns();
+                $query->order([$columns[$orderBy] => $orderDir]);
+            }
+        }
+
+        $customers = $query->toArray();
+        $filteredRecords = $this->Customers->find()->count();
+        $totalRecords = $this->Customers->find()->count();
+
+        $data = array('data' => $customers, 'length' => count($customers));
+
+        $jsonData = [
+            'draw' => intval($this->request->getQuery('draw')),
+            'recordsTotal' => intval($totalRecords),
+            'recordsFiltered' => intval($filteredRecords),
+            'data' => $data
+        ];
+
+        $this->response = $this->response->withStringBody(json_encode($jsonData));
+        return $this->response;
+    }
+
+
     public function edit($id)
     {
 
         $customer = $this->Customers->get($id);
         $users = $this->Customers->Users->find('list', ['limit' => 200]);
 
-        if ($this->request->is('patch','put', 'post')) {
+        if ($this->request->is('patch', 'put', 'post')) {
 
             $data = $this->request->getData();
 
@@ -60,7 +116,7 @@ class CustomersController extends AppController
             }
         }
 
-        $this->set(compact('customer','users'));
+        $this->set(compact('customer', 'users'));
     }
     public function add()
     {

@@ -63,6 +63,7 @@ return static function (RouteBuilder $routes) {
         $builder->connect("/customers/add", ["controller" => "Customers", "action" => "add"]);
         $builder->connect("/customers/edit/*", ["controller" => "Customers", "action" => "edit"]);
         $builder->connect("/customers/delete/*", ["controller" => "Customers", "action" => "delete"]);
+        $builder->connect("/customers/", ["controller" => "Customers", "action" => "getCustomersData"]);
 
 
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Customer $customer
@@ -23,19 +24,21 @@
             <fieldset>
                 <legend><?= __('Edit Customer') ?></legend>
                 <?php
-                    echo $this->Form->control('user_id', ['options' => $users]);
-                    echo $this->Form->control('firstname');
-                    echo $this->Form->control('lastname');
-                    echo $this->Form->control('address');
-                    echo $this->Form->control('state');
-                    echo $this->Form->control('zipcode');
-                    echo $this->Form->control('birthdate', ['empty' => true]);
-                    echo $this->Form->control('age');
-                    echo $this->Form->control('status');
+                echo $this->Form->control('user_id', ['options' => $users]);
+                echo $this->Form->control('firstname');
+                echo $this->Form->control('lastname');
+                echo $this->Form->control('address');
+                echo $this->Form->control('state');
+                echo $this->Form->control('zipcode');
+                echo $this->Form->control('birthdate', ['empty' => true]);
+                echo $this->Form->control('age');
+                echo $this->Form->control('status');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
         </div>
+        
+        
     </div>
 </div>

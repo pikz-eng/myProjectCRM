@@ -7,6 +7,9 @@ use Cake\ORM\Entity;
 
 class Customer extends Entity
 {
+
+
+    
     protected $_accesible =[
         "*" => true,
         "user" => true,

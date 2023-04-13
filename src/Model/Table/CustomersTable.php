@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 class CustomersTable extends Table
 {
     public function initialize(array $config):void
-    {
+    { 
 
         $this -> addBehavior("Timestamp");
         $this -> belongsTo("Users");
