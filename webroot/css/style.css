@@ -1,0 +1,52 @@
+#sortable {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#sortable li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#sortable li span {
+    position: absolute;
+    margin-left: -1.3em;
+}
+.sortable-row {
+    border-bottom: 1px solid #ccc;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width: 600px) {
+    th, td {
+        display: block;
+        width: 100%;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+}

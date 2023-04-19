@@ -8,7 +8,7 @@ function showCustomers()
     }
     else
     {
-       custList.style.visibility = "visible"; 
+       custList.style.visibility = "visible";
     }
 
 }

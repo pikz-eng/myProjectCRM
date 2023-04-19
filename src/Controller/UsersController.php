@@ -89,7 +89,7 @@ class UsersController extends AppController
         }
         $this -> set("title", "Login");
     }
-    
+
     public function dashboard($id)
     {
 
@@ -109,8 +109,8 @@ class UsersController extends AppController
 
 
     }
-    
-   
+
+
 
     public function view($id)
     {
@@ -155,22 +155,22 @@ class UsersController extends AppController
             if($this -> Users -> save($user))
             {
               $this -> Flash -> success(("Profilul tau a fost actualizat"));
-              return $this -> redirect(["action" => "/view/$id"]);  
+              return $this -> redirect(["action" => "/view/$id"]);
             }
             $this -> Flash -> error(("Mai incearca"));
         }
 
-       
+
  $this -> viewBuilder() -> setLayout("base");
  $this -> set("title", "Edit Profile");
  $this -> set("initials",$user -> profile -> initials);
  $this -> set("user", $user);
     }
- 
+
     public function logout()
     {
         $this -> request -> getSession() -> destroy();
         $this -> Flash -> success(("Te-ai delogat cu succes"));
-        return $this -> redirect(["action" => "/register"]);
+        return $this -> redirect(["action" => "/"]);
     }
 }

@@ -1,4 +1,4 @@
-<div class="side-nav">
+<div class="side-nav ">
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Html->link(__('List Customers'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
 

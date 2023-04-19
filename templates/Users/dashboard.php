@@ -8,9 +8,9 @@
         <?php else : ?>
             <?php foreach ($customers as $cu): ?>
         <?php if($customers -> status == "u" || "a"): ?>
-            <p class="dashboard_list"> <a href="<?= $this -> Url -> build("/customers/view/*" . $cu -> id . "") ?>"><?= $cu ->firstname ?> <?= $cu -> lastname ?></a></p> 
-            
-        
+            <p class="dashboard_list"> <a href="<?= $this -> Url -> build("/customers/view/*" . $cu -> id . "") ?>"><?= $cu ->firstname ?> <?= $cu -> lastname ?></a></p>
+
+
             <?php endif; ?>
             <?php endforeach; ?>
 
@@ -26,10 +26,10 @@
         <?php else: ?>
             <?php foreach ($customers as $ca): ?>
             <?php if($customers  -> status == "a"  && $ca -> detail -> assigned_id == $this -> request -> getSession() -> read("id")): ?>
-               <p class="dashboard_list"> <a href="<?= $this -> Url -> build("/customers/view/" . $ca -> id / "") ?>"> <?= $ca -> firstname ?> <?= $ca ->lastname ?></a></p>  
+               <p class="dashboard_list"> <a href="<?= $this -> Url -> build("/customers/view/" . $ca -> id / "") ?>"> <?= $ca -> firstname ?> <?= $ca ->lastname ?></a></p>
                 <?php endif; ?>
             <?php endforeach; ?>
-        
+
         <?php endif; ?>
 
         </div>

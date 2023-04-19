@@ -2,34 +2,34 @@
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    
+
   }
-  
+
   #table-border td, #table-border th {
     border: 1px solid #ddd;
     padding: 8px;
   }
-  
+
   #table-border tr:nth-child(even){background-color: #f2f2f2;}
-  
+
   #table-border tr:hover {background-color: #ddd;}
-  
-  
+
+
 
   .table-bordered tbody tr:last-of-type {
     border-bottom: 2px solid #980026;
 }
 
 .table-bordered thead tr {
-   
+
     background-color: #980026;
     color: #ffffff;
     text-align:center;
     font-family: verdana,arial,sans-serif;
     font-size: 16px;
-    
-    
-   
+
+
+
 }
 .table-bordered a{
 
@@ -43,13 +43,15 @@
         font-size: 10px;
         justify-content: center;
         align-items: center;
-      
+
 }
 .table-bordered tr{
     font-size: larger;
     font-weight: bold;
-   
+
 }
+
+
 
 
 
